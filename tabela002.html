@@ -7,23 +7,47 @@
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
+            background-color: aquamarine;
         }
-
+        
         table{
             width: 500px;
             border-collapse: collapse;
+            position: relative;
+        }
+
+        thead > tr > th{
+            position: sticky;
+            top: -1px;
+            background-color: gray;
+        }
+
+        caption{
+            font-size: 1.3em;
+            font-weight: bolder;
+            padding: 10px;
+            background-color: rgb(0, 255, 128);
+            color: white;
+            
         }
         td , th{
             border: 1px solid black;
-            padding: 10px;
+            
+        }
+        tbody tr:nth-child(2n){
+            background-color: white;
         }
 
         thead, tfoot{
             background-color: gray;
             color: white;
+            padding: 10px;
         }
 
         td.num{
+            text-align: right;
+        }
+        tfoot  td{
             text-align: right;
         }
     </style>
@@ -43,10 +67,11 @@
     -->
     <h1>uso de tabelas grandes </h1>
     <table>
+        <caption>População das Unidades federativas </caption>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>população</th>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 50px;">população</th>
             </tr>
         </thead>
 
@@ -125,17 +150,17 @@
                 <td>Piauí</td>
                 <td class="num">3 269 200</td>
             </tr>
-            ]<tr>
+            <tr>
                 <td> Alagoas</td>
                 <td class="num">3 127 511</td>
             </tr>
             <tr>
-                <td>Distrito Federal/td>
+                <td>Distrito Federal</td>
                 <td class="num">2 817 068</td>
             </tr>
             <tr>
                 <td>Mato Grosso do Sul</td>
-                <td class="num">12 756 700</td>
+                <td class="num">2 756 700</td>
             </tr>
             <tr>
                 <td> Sergipe</td>
@@ -161,11 +186,12 @@
                 <td>Roraima</td>
                 <td class="num">636 303</td>
             </tr>
+          
 
         </tbody>
 
         <tfoot>
-            <th>total de habitantes </th>
+            <th scope="row">total de habitantes </th>
             <td>210.147.125</td>
         </tfoot>
     </table>
